@@ -1,0 +1,60 @@
+trigger:
+- master
+
+pool:
+# A windows agent is required to execute the plugin tasks
+ vmImage: windows-2022
+
+steps:
+# Install Platform step will install the CLI which is self-contained in this task.
+
+# If this task is not used, the CLI will be downloaded from an external nuget feed
+- task: UiPathInstallPlatform@2
+
+- task: UiPathTest@2
+  inputs:
+    attachRobotLogs: true
+    testTarget: 'TestProject'
+    orchestratorConnection: 'DemoServiceConnection'
+    testProjectPath: 'Project'
+    folderName: 'Modern Folder'
+    testReportDestination: 'Output'
+
+# - task: UiPathPack@2
+#   inputs:
+#     versionType: 'AutoVersion'
+#     projectJsonPath: 'Project'
+#     orchestratorConnection: 'DemoServiceConnection'
+#     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+#     runWorkflowAnalysis: true
+
+
+# - task: PublishPipelineArtifact@1
+#   inputs:
+#     targetPath: '$(Build.ArtifactStagingDirectory)\Output'
+#     artifact: 'UiBankProcess'
+#     publishLocation: 'pipeline'
+
+
+#- task: UiPathRunJob@2
+#  inputs:
+#    orchestratorConnection: 'DemoServiceConnection'
+#    processName: 'CI.Demo.Process'
+#    folderName: 'Modern Folder'
+#    strategy: 'Specific'
+#    robotsIds: 'Thomas Stocker (laptop-2flmrhn0\thomas stocker)'
+
+#- task: UiPathTest@2
+#  inputs:
+#   testTarget: 'TestSet'
+#   orchestratorConnection: 'DemoServiceConnection'
+#   testSet: 'Arguments'
+#   folderName: 'Modern Folder'
+
+
+#- task: UiPathAssets@2
+#  inputs:
+#    orchestratorConnection: 'DemoServiceConnection'
+#    folderName: 'Modern Folder'
+#    assetActionType: 'Deploy'
+#    csvFile: 'assets.csv'
