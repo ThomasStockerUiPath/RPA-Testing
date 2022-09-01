@@ -1,0 +1,76 @@
+{
+  "name": "RPA Testing",
+  "description": "Blank Process",
+  "main": "Loan Qualification.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.14.0-preview]",
+    "UiPath.Mail.Activities": "[1.18.0-alpha.2923785]",
+    "UiPath.System.Activities": "[22.8.0-preview]",
+    "UiPath.Testing.Activities": "[22.7.0-preview]",
+    "UiPath.UIAutomation.Activities": "[22.7.0-preview]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "22.10.0.0",
+  "projectVersion": "1.0.115732816",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "c4267ee0-6583-40d6-82dd-e89d94e4959c",
+        "dataVariationFilePath": ".variations\\Loan Qualification.json",
+        "testCaseType": "TestCase",
+        "executionTemplateType": 1,
+        "fileName": "Test Loan Qualification.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "0f2e82ff-9f51-4ee6-90d5-fb6cf99b82dd",
+        "testCaseType": "TestCase",
+        "executionTemplateType": 1,
+        "fileName": "Test Loan Qualification for young applicant.xaml"
+      }
+    ],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "CSharp",
+  "entryPoints": [
+    {
+      "filePath": "Loan Qualification.xaml",
+      "uniqueId": "92527d5a-57e7-49f2-8eac-87b52d1e5e40",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}
