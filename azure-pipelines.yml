@@ -15,18 +15,25 @@ steps:
   inputs:
     attachRobotLogs: true
     testTarget: 'TestProject'
-    orchestratorConnection: 'DemoServiceConnection'
-    testProjectPath: 'Project'
-    folderName: 'Modern Folder'
+    orchestratorConnection: 'staging.uipath.com'
+    testProjectPath: 'RPA Testing'
+    folderName: 'Thomas Stocker'
     testReportDestination: 'Output'
 
-# - task: UiPathPack@2
-#   inputs:
-#     versionType: 'AutoVersion'
-#     projectJsonPath: 'Project'
-#     orchestratorConnection: 'DemoServiceConnection'
-#     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-#     runWorkflowAnalysis: true
+- task: UiPathPack@2
+  inputs:
+    versionType: 'AutoVersion'
+    projectJsonPath: 'RPA Testing'
+    orchestratorConnection: 'staging.uipath.com'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    runWorkflowAnalysis: true
+
+- task: UiPathDeploy@2
+  inputs:
+    orchestratorConnection: 'staging.uipath.com'
+    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+    folderName: 'Thomas Stocker'
+    entryPoints: 'Loan Qualification.xaml'
 
 
 # - task: PublishPipelineArtifact@1
